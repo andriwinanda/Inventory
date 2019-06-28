@@ -91,7 +91,7 @@ input[type=submit]:hover {
 
     // If the user clicks the submit button, submit the answer...
     $('#shortanswers').submit(function () {
-      let answer = ($("#answer").val()).toString()
+      let answer = ($("#answer").val()).toString().toUpperCase()
       socket.emit('answerquestion', { answer, username })
       return false;
     });
