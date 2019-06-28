@@ -129,6 +129,7 @@ input[type=submit]:hover {
       $("#reset").click(function(){
         $("#gameSelection").show();
         $("#gameSummary").hide();
+        
       });
 
     // If user clicks submit, emit the submitquestion message...
@@ -138,7 +139,7 @@ input[type=submit]:hover {
       $("#gameSummary").show();
       socket.emit('submitquestion', 
                   {question: $("#question").val(),
-                   answer: $("#answer").val(),
+                   answer: ($("#answer").val()).toString().toUpperCase(),
                    timeLimit: $("#timeLimit").val(),
                    questionType: "short"
                   });
